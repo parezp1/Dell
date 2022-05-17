@@ -1,0 +1,1 @@
+[PowerEdge]R740.example.com, idrac_ip='192.168.10.10', idrac_user='root', idrac_password='idrac_password'

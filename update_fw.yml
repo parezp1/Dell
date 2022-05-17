@@ -1,0 +1,18 @@
+---
+- hosts: PowerEdge
+  connection: local
+  gather_facts: False
+
+  tasks:
+  - name: Update firmware from a repository on a HTTPS share
+    dellemc.openmanage.idrac_firmware:
+      idrac_ip:  "{{ idrac_ip }}"
+      idrac_user:  "{{ idrac_user }}"
+      idrac_password:  "{{ idrac_password }}"
+      ca_path: "/path/to/ca_cert.pem"
+      share_name: "https://rhevm.cezdata.corp"
+      reboot: True
+      job_wait: True
+      apply_update: True
+      catalog_file_name: "/Dell/Catalog.xml"
+      validate_certs: False
